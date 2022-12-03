@@ -27,7 +27,6 @@ public class Part1 {
             line = line.replace("Y", "B");
             line = line.replace("Z", "C");
 
-            System.out.println(line);
 
             String[] split = line.split(" ");
             String player1 = split[0];

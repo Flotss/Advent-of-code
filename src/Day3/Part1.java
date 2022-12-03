@@ -16,7 +16,7 @@ public class Part1 {
             String part1 = line.substring(0, line.length()/2);
             String part2 = line.substring(line.length()/2);
 
-            char cha = 'a';
+            char cha;
             for (int i = 0; i< part1.length() ; i++){
                 cha = part1.charAt(i);
                 if (part2.contains(cha+"")){

@@ -86,6 +86,7 @@ public class Run {
                 String answer = scanner.nextLine();
                 if (answer.equalsIgnoreCase("n")) {
                     loop = false;
+                    break;
                 } else if (answer.equalsIgnoreCase("y")) {
                     break;
                 } else {

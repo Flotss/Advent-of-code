@@ -52,28 +52,26 @@ public class Run {
         Scanner scanner = new Scanner(System.in);
         boolean loop = true;
         while (loop) {
-            System.out.println("Choose a day : 1 - " + numberOfDay);
             int day;
             do {
+                System.out.println("Choose a day : 1 - " + numberOfDay);
                 try {
                     day = Integer.parseInt(scanner.nextLine());
                 } catch (Exception e) {
                     System.out.println("Please enter a number");
                     day = 0;
                 }
-                System.out.println("Choose a day : 1 - " + numberOfDay);
             } while (day <= 0 || day > numberOfDay);
 
-            System.out.println("Choose a part : 1 or 2");
             int part;
             do {
+                System.out.println("Choose a part : 1 or 2");
                 try {
                     part = Integer.parseInt(scanner.nextLine());
                 } catch (Exception e) {
                     System.out.println("Please enter a number");
                     part = 0;
                 }
-                System.out.println("Choose a part : 1 or 2");
             } while (part != 1 && part != 2);
 
             System.out.println("\nRunning day " + day + " part " + part + ", so the class is " + run.getClass("Day" + day + ".Part" + part));

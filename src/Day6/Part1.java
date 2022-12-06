@@ -23,7 +23,7 @@ public class Part1 {
                 ens.remove(0);
             }
             index++;
-            System.out.println(ens);
+
             if (ens.size() == 4)
                 trouve = notEqualsCharacters(ens);
 

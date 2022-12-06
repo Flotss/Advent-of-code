@@ -41,7 +41,7 @@ public class Part2 {
 
     public static void main(String[] args) throws IOException {
         initMap();
-        BufferedReader reader = new BufferedReader(new FileReader("src/Day2/text.txt"));
+        BufferedReader reader = new BufferedReader(new FileReader("inputs/inputDay2.txt"));
         String line;
         int score = 0;
         while ((line = reader.readLine()) != null) {

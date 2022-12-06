@@ -8,7 +8,7 @@ import java.util.TreeSet;
 public class Part2 {
     public static void main(String[] args) throws IOException {
         TreeSet<Integer> numbers = new TreeSet<>((o1, o2) -> o2 - o1);
-        BufferedReader reader = new BufferedReader(new FileReader("src/Day1/text.txt"));
+        BufferedReader reader = new BufferedReader(new FileReader("inputs/inputDay1.txt"));
         int somme = 0;
 
         String line;

@@ -19,7 +19,7 @@ public class Part1 {
     private final static int scoreScissors = 3;
 
     public static void main(String[] args) throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader("src/Day2/text.txt"));
+        BufferedReader reader = new BufferedReader(new FileReader("inputs/inputDay2.txt"));
         String line;
         int score = 0;
         while ((line = reader.readLine()) != null) {

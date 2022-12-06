@@ -1,10 +1,12 @@
 package Day1;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class Part1 {
     public static void main(String[] args) throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader("src/Day1/text.txt"));
+        BufferedReader reader = new BufferedReader(new FileReader("inputs/inputDay1.txt"));
         int max = 0;
         int somme = 0;
 

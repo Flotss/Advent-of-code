@@ -9,7 +9,7 @@ import java.util.Stack;
 
 public class Part1 {
     public static void main(String[] args) throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader("src/Day5/text.txt"));
+        BufferedReader reader = new BufferedReader(new FileReader("inputs/inputDay5.txt"));
         String line;
 
         // Initialize the map

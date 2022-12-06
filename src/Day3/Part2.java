@@ -10,7 +10,7 @@ public class Part2 {
 
 
     public static void main(String[] args) throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader("src/Day3/text.txt"));
+        BufferedReader reader = new BufferedReader(new FileReader("inputs/inputDay3.txt"));
         String line;
         int points = 0;
         while ((line = reader.readLine()) != null) {

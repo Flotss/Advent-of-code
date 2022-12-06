@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class Part2 {
 
     public static void main(String[] args) throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader("src/Day4/text.txt"));
+        BufferedReader reader = new BufferedReader(new FileReader("inputs/inputDay4.txt"));
         String line;
         int count = 0;
 

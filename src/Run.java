@@ -51,9 +51,25 @@ public class Run {
     }
 
     public static void main(String[] args) throws Exception {
+
+        if (args.length == 2) {
+            try {
+                System.out.println("\nRunning day " + args[0] + " part " + args[1] + ", so the class is " + Class.forName("Day" + args[0] + ".Part" + args[1]));
+                Class<?> c = Class.forName("Day" + args[0] + ".Part" + args[1]);
+                Method m = c.getMethod("main", String[].class);
+                m.invoke(null, (Object) new String[0]);
+                System.exit(0);
+            } catch (Exception e) {
+                System.out.println("Error: Invalid day or part, make sure you have the right day and part");
+                System.exit(1);
+            }
+        } else if (args.length > 2 || args.length == 1) {
+            System.out.println("Usage: java -cp bin Run <day> <part>");
+            System.exit(1);
+        }
+
+
         Run run = new Run();
-
-
         Scanner scanner = new Scanner(System.in);
         boolean loop = true;
         while (loop) {

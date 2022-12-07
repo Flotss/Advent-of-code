@@ -25,7 +25,13 @@ Linux :
 
 Then, you can run the code with the following command:
 
-    java -cp bin Run
+    java -cp bin Run 
+
+or
+
+    java -cp bin Run <day> <part>
+
+Where `<day>` is the day of the puzzle, `<part>` is the part of the puzzle (1 or 2)
 
 ### Exemple
 

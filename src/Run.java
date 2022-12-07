@@ -8,6 +8,7 @@ import java.util.TreeMap;
 public class Run {
 
     private final Map<String, Class<?>> classes = new TreeMap<>();
+    private final ArrayList<String> days = new ArrayList<>();
 
     public Run() throws ClassNotFoundException, InterruptedException {
         ArrayList<File> nameClasses = new ArrayList<>();
@@ -16,6 +17,11 @@ public class Run {
 
         for (File file : listOfFiles) {
             if (file.isDirectory()) {
+                if (file.getName().contains("notFinished")) {
+                    continue;
+                }
+
+                days.add(file.getName().substring(3));
                 for (File file2 : file.listFiles()) {
                     String name = file2.getName();
                     if (name.endsWith(".java")) {
@@ -47,21 +53,28 @@ public class Run {
     public static void main(String[] args) throws Exception {
         Run run = new Run();
 
-        int numberOfDay = (run.classes.size() % 2 == 0) ? run.classes.size() / 2 : (run.classes.size() / 2) + 1;
 
         Scanner scanner = new Scanner(System.in);
         boolean loop = true;
         while (loop) {
             int day;
             do {
-                System.out.println("Choose a day : 1 - " + numberOfDay);
+                System.out.print("Choose a day : ");
+                for (String s : run.days) {
+                    if (run.days.indexOf(s) != run.days.size() - 1) {
+                        System.out.print(s + ", ");
+                    } else {
+                        System.out.println(s + ".\n");
+                    }
+                }
+
                 try {
                     day = Integer.parseInt(scanner.nextLine());
                 } catch (Exception e) {
                     System.out.println("Please enter a number");
                     day = 0;
                 }
-            } while (day <= 0 || day > numberOfDay);
+            } while (!run.days.contains(day + ""));
 
             int part;
             do {

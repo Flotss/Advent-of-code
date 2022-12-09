@@ -53,22 +53,22 @@ public class Part1 {
 
         reader = new BufferedReader(new FileReader(INPUT_FILE));
         // We want all columns
-        String[] lines = new String[100];
+        String[] columns = new String[100];
         while ((line = reader.readLine()) != null) {
             for (int columnIndex = 0; columnIndex < line.length(); columnIndex++) {
-                lines[columnIndex] = lines[columnIndex] == null ? "" : lines[columnIndex];
-                lines[columnIndex] += line.charAt(columnIndex);
+                columns[columnIndex] = columns[columnIndex] == null ? "" : columns[columnIndex];
+                columns[columnIndex] += line.charAt(columnIndex);
             }
         }
 
 
         // Now we have all columns in lines
         // But if the tab is not full, we have to remove all the empty columns
-        lines = removeEmptyColumns(lines);
+        columns = removeEmptyColumns(columns);
 
 
         int x = 0;
-        for (String s : lines) {
+        for (String s : columns) {
             line = s;
             int maxI = -1;
             int maxJ = -1;
@@ -83,7 +83,6 @@ public class Part1 {
                     }
                 } else {
                     if (valI > maxI) {
-
                         maxI = valI;
                         treeUsed.add(new Position(x, i));
                     }
@@ -117,7 +116,6 @@ public class Part1 {
 
 
     public record Position(int x, int y) implements Comparable<Position> {
-
 
         @Override
         public boolean equals(Object o) {

@@ -18,8 +18,8 @@ public class Part1 {
 
         int y = 0;
         while ((line = reader.readLine()) != null) {
-            int maxI = 0;
-            int maxJ = 0;
+            int maxI = -1;
+            int maxJ = -1;
             int j = line.length() - 1;
             for (int i = 0; i < line.length(); i++) {
                 System.out.println("i: " + i + " j: " + j);
@@ -76,13 +76,14 @@ public class Part1 {
         int x = 0;
         for (String s : lines) {
             line = s;
-            int maxI = 0;
-            int maxJ = 0;
+            int maxI = -1;
+            int maxJ = -1;
             int j = line.length() - 1;
             for (int i = 0; i < line.length(); i++) {
                 int valI = Integer.parseInt(line.charAt(i) + "");
                 int valJ = Integer.parseInt(line.charAt(j) + "");
-
+                System.out.println(valI + " " + x + " " + i);
+                System.out.println(valJ + " " + x + " " + j);
                 if (i == j) {
                     if (valI > maxI) {
                         maxI = valI;

@@ -1,4 +1,4 @@
-package Day8_notFinished;
+package Day8;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

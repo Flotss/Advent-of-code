@@ -16,17 +16,18 @@ public class Run {
         File[] listOfFiles = folder.listFiles();
 
         for (File file : listOfFiles) {
-            if (file.isDirectory()) {
-                if (file.getName().contains("notFinished")) {
-                    continue;
-                }
+            if (file.isFile()) {
+                continue;
+            }
+            if (file.getName().contains("notFinished")) {
+                continue;
+            }
 
-                days.add(file.getName().substring(3));
-                for (File file2 : file.listFiles()) {
-                    String name = file2.getName();
-                    if (name.endsWith(".java")) {
-                        nameClasses.add(file2);
-                    }
+            days.add(file.getName().substring(3));
+            for (File file2 : file.listFiles()) {
+                String name = file2.getName();
+                if (name.endsWith(".java")) {
+                    nameClasses.add(file2);
                 }
             }
         }
@@ -80,7 +81,7 @@ public class Run {
                     if (run.days.indexOf(s) != run.days.size() - 1) {
                         System.out.print(s + ", ");
                     } else {
-                        System.out.println(s + ".\n");
+                        System.out.println(s + ".");
                     }
                 }
 
@@ -103,7 +104,7 @@ public class Run {
                 }
             } while (part != 1 && part != 2);
 
-            System.out.println("\nRunning day " + day + " part " + part + ", so the class is " + run.getClass("Day" + day + ".Part" + part));
+            System.out.println("\nRunning day " + day + " part " + part + "...");
             Class<?> c = run.getClass("Day" + day + ".Part" + part);
             Method m = run.getMethod(c, "main");
             m.invoke(null, (Object) new String[0]);

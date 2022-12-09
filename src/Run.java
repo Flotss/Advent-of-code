@@ -62,6 +62,7 @@ public class Run {
                 System.exit(0);
             } catch (Exception e) {
                 System.out.println("Error: Invalid day or part, make sure you have the right day and part");
+                System.out.println("Possible days: " + new Run().days);
                 System.exit(1);
             }
         } else if (args.length > 2 || args.length == 1) {

@@ -22,26 +22,22 @@ public class Part1 {
             int maxJ = -1;
             int j = line.length() - 1;
             for (int i = 0; i < line.length(); i++) {
-                System.out.println("i: " + i + " j: " + j);
                 int valI = Integer.parseInt(line.charAt(i) + "");
                 int valJ = Integer.parseInt(line.charAt(j) + "");
 
                 if (i == j) {
-                    System.out.println("i == j");
                     if (valI > maxI) {
                         maxI = valI;
                         treeUsed.add(new Position(i, y));
                     }
                 } else {
                     if (valI > maxI) {
-                        System.out.println("valI > maxI" + " valI: " + valI + " maxI: " + maxI);
                         maxI = valI;
 
                         treeUsed.add(new Position(i, y));
                     }
 
                     if (valJ > maxJ) {
-                        System.out.println("valJ > maxJ" + " valJ: " + valJ + " maxJ: " + maxJ);
                         maxJ = valJ;
 
                         treeUsed.add(new Position(j, y));
@@ -55,8 +51,6 @@ public class Part1 {
 
         }
 
-
-        System.out.println("\n\n");
         reader = new BufferedReader(new FileReader(INPUT_FILE));
         // We want all columns
         String[] lines = new String[100];
@@ -82,8 +76,6 @@ public class Part1 {
             for (int i = 0; i < line.length(); i++) {
                 int valI = Integer.parseInt(line.charAt(i) + "");
                 int valJ = Integer.parseInt(line.charAt(j) + "");
-                System.out.println(valI + " " + x + " " + i);
-                System.out.println(valJ + " " + x + " " + j);
                 if (i == j) {
                     if (valI > maxI) {
                         maxI = valI;
@@ -124,34 +116,19 @@ public class Part1 {
     }
 
 
-    public static class Position implements Comparable<Position> {
-        private final int x;
-        private final int y;
-
-        public Position(int x, int y) {
-            this.x = x;
-            this.y = y;
-        }
-
-        public int getX() {
-            return x;
-        }
-
-        public int getY() {
-            return y;
-        }
+    public record Position(int x, int y) implements Comparable<Position> {
 
 
         @Override
         public boolean equals(Object o) {
             if (this == o) return true;
             if (!(o instanceof Position position)) return false;
-            return getX() == position.getX() && getY() == position.getY();
+            return x() == position.x() && y() == position.y();
         }
 
         @Override
         public int hashCode() {
-            return Objects.hash(getX(), getY());
+            return Objects.hash(x(), y());
         }
 
         @Override

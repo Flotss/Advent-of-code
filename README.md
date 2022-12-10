@@ -43,7 +43,7 @@ Where `<day>` is the day of the puzzle, `<part>` is the part of the puzzle (1 or
 
 You must change your inputs in  :
 
-        src/inputs/
+        inputs/
 
 Else, the result will be the result of [Flotss](https://github.com/Flotss) and not yours.
 

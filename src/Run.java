@@ -19,7 +19,7 @@ public class Run {
             if (file.isFile()) {
                 continue;
             }
-            if (file.getName().contains("notFinished")) {
+            if (file.getName().contains("notFinished") || file.getName().contains("utils")) {
                 continue;
             }
 

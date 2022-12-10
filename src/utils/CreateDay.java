@@ -16,7 +16,7 @@ public class CreateDay {
 
 
         // How to write line in file
-        String linesPart1 = "package Day" + day + ";\n" +
+        String linesPart1 = "package Day" + day + "_notFinished;\n" +
                 "\n" +
                 "import java.io.BufferedReader;\n" +
                 "import java.io.FileReader;\n" +

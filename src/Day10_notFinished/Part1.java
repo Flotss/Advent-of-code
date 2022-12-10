@@ -1,4 +1,4 @@
-package Day10;
+package Day10_notFinished;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -9,7 +9,7 @@ public class Part1 {
 
     public static void main(String[] args) throws IOException {
         ArrayList<Integer> cycle = new ArrayList<>();
-        BufferedReader reader = new BufferedReader(new FileReader("inputs/inputDay9.txt"));
+        BufferedReader reader = new BufferedReader(new FileReader("inputs/inputDay10.txt"));
         String line;
 
         // Add all cycle

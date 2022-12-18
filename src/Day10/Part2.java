@@ -1,11 +1,11 @@
-package Day10_notFinished;
+package Day10;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class Part1 {
+public class Part2 {
 
     public static void main(String[] args) throws IOException {
         ArrayList<Integer> cycle = new ArrayList<>();
@@ -36,14 +36,38 @@ public class Part1 {
             amount += cycle.get(i);
         }
 
-        // Find the sum of (20, 40, 80, 120, 160, 200...)
-        amount = 0;
+
+        ArrayList<Integer> cycle20_40_80 = new ArrayList<>();
         for (int i = 0; i < cycleUpdated.size(); i++) {
             if ((i - 19) % 40 == 0) {
-                amount += cycleUpdated.get(i) * (i + 1);
+                System.out.println(cycleUpdated.get(i));
+                cycle20_40_80.add(cycleUpdated.get(i));
             }
         }
 
-        System.out.println(amount);
+        int widthSprite = 3;
+        int witdhLine = 40;
+        int heightScreen = 6;
+
+        for (int i = 0; i < heightScreen; i++) {
+            int amountLine = cycle20_40_80.get(i);
+            if (amountLine == 0) {
+                System.out.print("##");
+                for (int j = 1; j < witdhLine; j++) {
+                    System.out.print(".");
+                }
+            } else {
+                for (int j = 0; j < witdhLine; j++) {
+                    if (amountLine - 1 == j) {
+                        for (int k = 0; k < widthSprite; k++) {
+                            System.out.print("#");
+                        }
+                    } else {
+                        System.out.print(".");
+                    }
+                }
+            }
+            System.out.println();
+        }
     }
 }
